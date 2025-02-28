@@ -15,8 +15,7 @@ Future<void> init() async {
   sl.registerFactory<BottomNavBarCubit>(() => BottomNavBarCubit());
 
   //*Wallet
-  sl.registerFactory<WalletCubit>(() => WalletCubit());
+  sl.registerLazySingleton<WalletCubit>(() => WalletCubit());
 
   //*Markets
-  sl.registerFactory<WalletCubit>(() => WalletCubit());
 }
