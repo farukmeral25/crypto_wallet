@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paribu_mobile/core/constant/app_page_routes.dart';
 import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
 import 'package:paribu_mobile/core/extension/widget_extension.dart';
@@ -6,6 +7,7 @@ import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
 import 'package:paribu_mobile/core/shared/app_button.dart';
 import 'package:paribu_mobile/core/shared/app_icon.dart';
 import 'package:paribu_mobile/core/shared/app_sized_box.dart';
+import 'package:paribu_mobile/core/utils/route_manager.dart';
 
 class WalletBody extends StatelessWidget {
   const WalletBody({super.key});
@@ -17,6 +19,8 @@ class WalletBody extends StatelessWidget {
         SliverList.separated(
           itemBuilder:
               (context, index) => ListTile(
+                //TODO: Update argument from wallet dto
+                onTap: () => RouteManager().navigateTo(AppPageRoutes.walletManage, arguments: "Wallet A"),
                 title: Text("Wallet A", overflow: TextOverflow.ellipsis),
                 subtitle: Text("0xabcd1234567bd1b76A09Cf2817F456a89C9FF1bb", overflow: TextOverflow.ellipsis),
                 trailing: AppIcon(assetPath: AssetPaths().arrowRightiOS, height: 32),
