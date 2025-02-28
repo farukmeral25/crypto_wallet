@@ -1,3 +1,13 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M9.74408 8.07745C10.0695 7.75201 10.5972 7.75201 10.9226 8.07745L14.2559 11.4108C14.5814 11.7362 14.5814 12.2639 14.2559 12.5893L10.9226 15.9226C10.5972 16.2481 10.0695 16.2481 9.74408 15.9226C9.41864 15.5972 9.41864 15.0696 9.74408 14.7441L12.4882 12L9.74408 9.25596C9.41864 8.93053 9.41864 8.40289 9.74408 8.07745Z" fill="#1F2229" fill-opacity="0.8" style="fill:#1F2229;fill:color(display-p3 0.1216 0.1333 0.1608);fill-opacity:0.8;"/>
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="24.000000pt" height="24.000000pt" viewBox="0 0 24.000000 24.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M100 154 c0 -5 5 -15 12 -22 8 -8 8 -15 -2 -27 -20 -24 -6 -28 15 -5
+18 20 18 21 -3 43 -12 12 -22 17 -22 11z"/>
+</g>
 </svg>
