@@ -9,11 +9,29 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  dartz: ^0.10.1
+  flutter_dotenv: ^5.2.1
+  freezed_annotation: ^3.0.0
+  retrofit: ^4.4.2
+  get_it: ^8.0.3
+  dio: ^5.7.0
+  flutter_svg: ^2.0.17
+  flutter_bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  retrofit_generator: ^9.1.7
+  json_serializable: ^6.9.3
+  build_runner: ^2.4.14
+  freezed: ^3.0.2
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/svg/
+    - .env.dev 
+    - .env.prod
