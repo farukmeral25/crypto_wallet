@@ -8,4 +8,6 @@ class AppStrings {
   static const String max60Characters = "Maximum 60 characters";
   static const String pinCode = "Pin Code";
   static const String scanQrCode = "Scan the QR code";
+  static const String publicAddress = "Public Address";
+  static const String mnemonicPhrase = "Mnemonic Phrase";
 }
