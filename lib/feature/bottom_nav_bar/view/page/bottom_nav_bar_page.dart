@@ -19,6 +19,7 @@ class BottomNavBarPage extends StatelessWidget {
       builder:
           (context, state) => Scaffold(
             appBar: AppBar(title: Text(state.type.label)),
+            body: state.type.body,
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               currentIndex: BottomNavBarType.values.indexOf(state.type),
