@@ -14,6 +14,6 @@ class AppTheme {
     listTileTheme: AppListTileTheme.listTileTheme,
     appBarTheme: AppAppBarTheme.appBarTheme,
     bottomNavigationBarTheme: AppBottomBarTheme.bottomBarTheme,
-    dividerTheme: DividerThemeData(color: Colors.red),
+    dividerTheme: DividerThemeData(color: AppColors.foregroundStroke),
   );
 }

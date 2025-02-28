@@ -6,4 +6,5 @@ class AppColors {
   static Color foregroundPrimary = Color(0xFF1F2229);
   static Color foregroundSecondary = Color(0xFF1F2229).withAlpha(80);
   static Color foregroundTertiary = Color(0xFF1F2229).withAlpha(60);
+  static Color foregroundStroke = Color(0xFF1F2229).withAlpha(8);
 }

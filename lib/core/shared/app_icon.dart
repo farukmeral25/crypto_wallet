@@ -18,7 +18,7 @@ class AppIcon extends StatelessWidget {
       if (assetPath.endsWith(".svg")) {
         return SvgPicture.network(
           assetPath,
-          colorFilter: ColorFilter.mode(color ?? AppColors.foregroundTertiary, BlendMode.srcIn),
+          colorFilter: ColorFilter.mode(color ?? AppColors.foregroundSecondary, BlendMode.srcIn),
           height: height,
           width: width,
           fit: fit,
@@ -40,7 +40,7 @@ class AppIcon extends StatelessWidget {
       if (assetPath.endsWith(".svg")) {
         return SvgPicture.asset(
           assetPath,
-          colorFilter: ColorFilter.mode(color ?? AppColors.foregroundTertiary, BlendMode.srcIn),
+          colorFilter: ColorFilter.mode(color ?? AppColors.foregroundSecondary, BlendMode.srcIn),
           height: height,
           width: width,
           fit: fit,
