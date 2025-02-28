@@ -5,6 +5,7 @@ import 'package:paribu_mobile/core/extension/widget_extension.dart';
 import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
 import 'package:paribu_mobile/core/shared/app_button.dart';
 import 'package:paribu_mobile/core/shared/app_icon.dart';
+import 'package:paribu_mobile/core/shared/app_sized_box.dart';
 
 class WalletBody extends StatelessWidget {
   const WalletBody({super.key});
@@ -25,8 +26,19 @@ class WalletBody extends StatelessWidget {
           },
           itemCount: 4,
         ),
-
-        AppButton.filled(AppStrings.createWallet).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
+        AppSizedBox.height(48).toSliver,
+        AppButton.filled(
+          AppStrings.createWallet,
+          onTap: () {
+            //TODO: Create Wallet
+          },
+        ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
+        AppButton.text(
+          AppStrings.importWallet,
+          onTap: () {
+            //TODO: Import Wallet
+          },
+        ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
       ],
     );
   }
