@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
 import 'package:paribu_mobile/feature/charts/view/charts_body.dart';
 import 'package:paribu_mobile/feature/wallet/view/wallet_body.dart';
@@ -18,9 +19,9 @@ extension BottomNavBarTypeExtension on BottomNavBarType {
   String get label {
     switch (this) {
       case BottomNavBarType.charts:
-        return "Markets";
+        return AppStrings.markets;
       case BottomNavBarType.wallet:
-        return "Wallet";
+        return AppStrings.wallet;
     }
   }
 
