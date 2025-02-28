@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
+import 'package:paribu_mobile/core/extension/widget_extension.dart';
+import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
+import 'package:paribu_mobile/core/shared/app_button.dart';
 import 'package:paribu_mobile/core/shared/app_icon.dart';
 
 class WalletBody extends StatelessWidget {
@@ -21,6 +25,8 @@ class WalletBody extends StatelessWidget {
           },
           itemCount: 4,
         ),
+
+        AppButton.filled(AppStrings.createWallet).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
       ],
     );
   }
