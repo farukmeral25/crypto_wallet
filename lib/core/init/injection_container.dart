@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:paribu_mobile/feature/bottom_nav_bar/bloc/cubit/bottom_nav_bar_cubit.dart';
+import 'package:paribu_mobile/feature/wallet/bloc/cubit/wallet_cubit.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -12,4 +13,10 @@ Future<void> init() async {
 
   //*BottomNavBar
   sl.registerFactory<BottomNavBarCubit>(() => BottomNavBarCubit());
+
+  //*Wallet
+  sl.registerFactory<WalletCubit>(() => WalletCubit());
+
+  //*Markets
+  sl.registerFactory<WalletCubit>(() => WalletCubit());
 }
