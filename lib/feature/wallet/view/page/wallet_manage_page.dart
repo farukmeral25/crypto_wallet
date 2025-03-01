@@ -8,30 +8,29 @@ import 'package:paribu_mobile/core/shared/app_button.dart';
 import 'package:paribu_mobile/core/shared/app_icon.dart';
 import 'package:paribu_mobile/core/shared/app_sized_box.dart';
 import 'package:paribu_mobile/core/utils/route_manager.dart';
+import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
 
 class WalletManagePage extends StatelessWidget {
   const WalletManagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final wallet = ModalRoute.of(context)?.settings.arguments as WalletDto;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
           padding: REdgeInsets.all(8),
           child: GestureDetector(onTap: RouteManager().pop, child: AppIcon(assetPath: AssetPaths().arrowLeft)),
         ),
-        title: Text("Wallet A"),
+        title: Text(wallet.name),
       ),
       body: CustomScrollView(
         slivers: [
           Column(
             children: [
-              _buildListTile(title: AppStrings.publicAddress, subtitle: "0xabcd1234567bd1b76A09Cf2817F456a89C9FF1bb"),
+              _buildListTile(title: AppStrings.publicAddress, subtitle: wallet.address),
               Divider(indent: 16, endIndent: 16, height: 1),
-              _buildListTile(
-                title: AppStrings.mnemonicPhrase,
-                subtitle: "apple, wall, sunset, ocean, moon, tree, garden, river, shadow, bridge, light, dream",
-              ),
+              _buildListTile(title: AppStrings.mnemonicPhrase, subtitle: wallet.encryptedMnemonic),
             ],
           ).toSliver,
           AppSizedBox.height(48).toSliver,
