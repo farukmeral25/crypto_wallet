@@ -6,6 +6,7 @@ import 'package:paribu_mobile/core/error/failure.dart';
 import 'package:paribu_mobile/core/error/general_failures.dart';
 import 'package:paribu_mobile/core/init/injection_container.dart';
 import 'package:paribu_mobile/core/utils/aes_helper.dart';
+import 'package:paribu_mobile/core/utils/app_file_picker.dart';
 import 'package:paribu_mobile/core/utils/local_services/service/i_local_service.dart';
 import 'package:paribu_mobile/core/utils/local_services/utils/enum/local_keys.dart';
 import 'package:paribu_mobile/core/utils/local_services/utils/param/local_key_param.dart';
@@ -55,6 +56,17 @@ class WalletRepo implements IWalletRepo {
       });
     } catch (e) {
       return Left(ServiceFailure(error: "Save Wallet Err: $e"));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> exportWallet(String password, WalletDto wallet) async {
+    try {
+      String jsonWallet = jsonEncode(wallet.toJson());
+      await AppFilePicker.exportFile(password: password, data: {"wallet": jsonWallet}, path: "wallet_data.json");
+      return Right(null);
+    } catch (e) {
+      return Left(ServiceFailure(error: "Export Wallet Err: $e"));
     }
   }
 }
