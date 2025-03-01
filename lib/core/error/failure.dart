@@ -1,3 +1,5 @@
+import 'package:paribu_mobile/core/shared/app_snackbar/snackbar.dart';
+
 abstract class Failure {
   final String? error;
 
@@ -6,6 +8,6 @@ abstract class Failure {
   String get message => error ?? toString();
 
   void showSnackBar() {
-    print(error);
+    AppSnackBar.show(message);
   }
 }

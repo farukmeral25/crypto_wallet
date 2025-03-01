@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:dartz/dartz.dart';
 import 'package:paribu_mobile/core/error/failure.dart';
 import 'package:paribu_mobile/core/error/general_failures.dart';
+import 'package:paribu_mobile/core/extension/generic_extension.dart';
 import 'package:paribu_mobile/core/init/injection_container.dart';
 import 'package:paribu_mobile/core/utils/aes_helper.dart';
 import 'package:paribu_mobile/core/utils/app_file_picker.dart';
@@ -76,7 +77,7 @@ class WalletRepo implements IWalletRepo {
       if (fileData != null && fileData.containsKey('password_hash') && fileData.containsKey('wallet')) {
         return Right(WalletDto.fromJson(fileData['wallet']));
       }
-      return Left(NullPointerFailure(error: "Import Wallet Err: Şifreleme hatası"));
+      return Left(NullPointerFailure(error: "Import Wallet Err: ${fileData.isNull ? "Bir json dosyası seçiniz" : "Şifreleme hatası"}"));
     } catch (e) {
       return Left(ServiceFailure(error: "Import Wallet Err: $e"));
     }

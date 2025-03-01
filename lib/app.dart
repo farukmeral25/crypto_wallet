@@ -15,6 +15,7 @@ class ParibuApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       title: AppConstants.appName,
       navigatorKey: AppKeys.navigatorKey,
+      scaffoldMessengerKey: AppKeys.scaffoldMessengerKey,
       onGenerateRoute: AppPageRoutes.onGenerateRoute,
     );
   }
