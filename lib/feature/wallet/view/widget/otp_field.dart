@@ -6,7 +6,7 @@ import 'package:paribu_mobile/core/shared/app_text_field.dart';
 
 class OtpField extends StatefulWidget {
   const OtpField({super.key, required this.onSubmit});
-  final void Function() onSubmit;
+  final void Function(String val) onSubmit;
   @override
   State<OtpField> createState() => _OtpFieldState();
 }
@@ -55,7 +55,7 @@ class _OtpFieldState extends State<OtpField> {
                         _moveToPreviousFocus(nodes.indexOf(e));
                       }
                       if (text.length.isEquals(nodes.length)) {
-                        widget.onSubmit();
+                        widget.onSubmit(text);
                       }
                     },
                   ),
