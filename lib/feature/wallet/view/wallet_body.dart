@@ -14,7 +14,6 @@ import 'package:paribu_mobile/core/shared/app_widget_state_builder.dart';
 import 'package:paribu_mobile/core/utils/route_manager.dart';
 import 'package:paribu_mobile/feature/wallet/bloc/cubit/wallet_cubit.dart';
 import 'package:paribu_mobile/feature/wallet/bloc/state/wallet_state.dart';
-import 'package:paribu_mobile/feature/wallet/view/page/create_wallet_page.dart';
 
 class WalletBody extends StatefulWidget {
   const WalletBody({super.key});
@@ -65,11 +64,7 @@ class _WalletBodyState extends State<WalletBody> {
               AppButton.filled(
                 AppStrings.createWallet,
                 onTap: () {
-                  //TODO: Move to RouteManager...
-                  Navigator.push(
-                    context,
-                    ModalBottomSheetRoute(builder: (context) => CreateWalletPage(), isScrollControlled: true, useSafeArea: true),
-                  );
+                  RouteManager().navigateTo(AppPageRoutes.createWallet);
                 },
               ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
               AppButton.text(

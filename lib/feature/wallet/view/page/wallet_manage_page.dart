@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paribu_mobile/core/constant/app_page_routes.dart';
 import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
 import 'package:paribu_mobile/core/extension/widget_extension.dart';
@@ -37,7 +38,7 @@ class WalletManagePage extends StatelessWidget {
           AppButton.filled(
             AppStrings.exportWallet,
             onTap: () {
-              //TODO: Export Wallet
+              RouteManager().navigateTo(AppPageRoutes.enterPinCode);
             },
           ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
           AppButton.text(
