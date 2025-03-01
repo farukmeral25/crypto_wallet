@@ -10,8 +10,17 @@ class CoinDto {
   final String image;
   @JsonKey(name: "current_price")
   final double currentPrice;
+  @JsonKey(name: "market_cap_change_percentage_24h")
+  final double changePercentage24h;
 
-  CoinDto({required this.id, required this.symbol, required this.name, required this.image, required this.currentPrice});
+  CoinDto({
+    required this.id,
+    required this.symbol,
+    required this.name,
+    required this.image,
+    required this.currentPrice,
+    required this.changePercentage24h,
+  });
 
   factory CoinDto.fromJson(Map<String, dynamic> json) => _$CoinDtoFromJson(json);
 

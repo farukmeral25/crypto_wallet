@@ -5,5 +5,5 @@ part 'bottom_nav_bar_state.freezed.dart';
 
 @freezed
 abstract class BottomNavBarState with _$BottomNavBarState {
-  const factory BottomNavBarState({@Default(BottomNavBarType.charts) BottomNavBarType type}) = _BottomNavBarState;
+  const factory BottomNavBarState({@Default(BottomNavBarType.markets) BottomNavBarType type}) = _BottomNavBarState;
 }

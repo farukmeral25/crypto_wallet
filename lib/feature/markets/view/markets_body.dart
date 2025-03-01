@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ChartsBody extends StatelessWidget {
-  const ChartsBody({super.key});
+class MarketBody extends StatelessWidget {
+  const MarketBody({super.key});
 
   @override
   Widget build(BuildContext context) {

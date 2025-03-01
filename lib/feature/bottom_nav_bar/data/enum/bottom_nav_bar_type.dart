@@ -1,15 +1,15 @@
 import 'package:flutter/widgets.dart';
 import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
-import 'package:paribu_mobile/feature/charts/view/charts_body.dart';
+import 'package:paribu_mobile/feature/markets/view/markets_body.dart';
 import 'package:paribu_mobile/feature/wallet/view/wallet_body.dart';
 
-enum BottomNavBarType { charts, wallet }
+enum BottomNavBarType { markets, wallet }
 
 extension BottomNavBarTypeExtension on BottomNavBarType {
   String get icon {
     switch (this) {
-      case BottomNavBarType.charts:
+      case BottomNavBarType.markets:
         return AssetPaths().chart;
       case BottomNavBarType.wallet:
         return AssetPaths().wallet;
@@ -18,7 +18,7 @@ extension BottomNavBarTypeExtension on BottomNavBarType {
 
   String get label {
     switch (this) {
-      case BottomNavBarType.charts:
+      case BottomNavBarType.markets:
         return AppStrings.markets;
       case BottomNavBarType.wallet:
         return AppStrings.wallet;
@@ -27,8 +27,8 @@ extension BottomNavBarTypeExtension on BottomNavBarType {
 
   Widget get body {
     switch (this) {
-      case BottomNavBarType.charts:
-        return ChartsBody();
+      case BottomNavBarType.markets:
+        return MarketBody();
       case BottomNavBarType.wallet:
         return WalletBody();
     }
