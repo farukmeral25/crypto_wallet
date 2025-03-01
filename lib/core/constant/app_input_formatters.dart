@@ -10,8 +10,13 @@ class AppInputFormatters {
   }
 
   final LengthLimitingTextInputFormatter _max60Characters = LengthLimitingTextInputFormatter(60);
+  final LengthLimitingTextInputFormatter _otpLength = LengthLimitingTextInputFormatter(1);
 
   List<TextInputFormatter> get walletName {
     return [_max60Characters];
+  }
+
+  List<TextInputFormatter> get otp {
+    return [_otpLength];
   }
 }
