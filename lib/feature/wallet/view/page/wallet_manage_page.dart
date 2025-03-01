@@ -7,6 +7,7 @@ import 'package:paribu_mobile/core/functions/app_functions.dart';
 import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
 import 'package:paribu_mobile/core/shared/app_button.dart';
 import 'package:paribu_mobile/core/shared/app_icon.dart';
+import 'package:paribu_mobile/core/shared/app_scaffold.dart';
 import 'package:paribu_mobile/core/shared/app_sized_box.dart';
 import 'package:paribu_mobile/core/utils/route_manager.dart';
 import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
@@ -17,7 +18,7 @@ class WalletManagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wallet = ModalRoute.of(context)?.settings.arguments as WalletDto;
-    return Scaffold(
+    return AppScaffold(
       appBar: AppBar(
         leading: Padding(
           padding: REdgeInsets.all(8),
