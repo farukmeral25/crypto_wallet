@@ -6,7 +6,9 @@ import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
 class AppButtonTheme {
   static FilledButtonThemeData filledButtonTheme = FilledButtonThemeData(
     style: ButtonStyle(
-      fixedSize: WidgetStatePropertyAll(Size.fromWidth(double.infinity)),
+      alignment: Alignment.center,
+      maximumSize: WidgetStatePropertyAll(Size.fromWidth(double.infinity)),
+      fixedSize: WidgetStatePropertyAll(Size.fromWidth(double.maxFinite)),
       shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6.r)))),
       padding: WidgetStatePropertyAll(REdgeInsets.symmetric(horizontal: 16, vertical: 14)),
       backgroundColor: WidgetStatePropertyAll(AppColors.green),
@@ -15,7 +17,9 @@ class AppButtonTheme {
 
   static TextButtonThemeData textButtonTheme = TextButtonThemeData(
     style: ButtonStyle(
-      fixedSize: WidgetStatePropertyAll(Size.fromWidth(double.infinity)),
+      alignment: Alignment.center,
+      maximumSize: WidgetStatePropertyAll(Size.fromWidth(double.infinity)),
+      fixedSize: WidgetStatePropertyAll(Size.fromWidth(double.maxFinite)),
       padding: WidgetStatePropertyAll(REdgeInsets.symmetric(horizontal: 16, vertical: 14)),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),
