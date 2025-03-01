@@ -37,7 +37,7 @@ class AppFilePicker {
   }
 
   static Future<Map<String, dynamic>?> _readFromFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: false);
 
     if (result != null) {
       File file = File(result.files.single.path!);
