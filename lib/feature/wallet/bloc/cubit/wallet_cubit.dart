@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:paribu_mobile/core/constant/app_page_routes.dart';
 import 'package:paribu_mobile/core/extension/generic_extension.dart';
 import 'package:paribu_mobile/core/init/injection_container.dart';
 import 'package:paribu_mobile/core/utils/route_manager.dart';
@@ -56,5 +57,12 @@ class WalletCubit extends Cubit<WalletState> {
     _walletRepo.saveWallets([...wallets]);
   }
 
-  void exportWallet(WalletDto wallet) {}
+  Future<void> exportWallet({required WalletDto wallet, required String password}) async {
+    final exportWalletEither = await _walletRepo.exportWallet(password, wallet);
+    exportWalletEither.fold((failure) {
+      failure.showSnackBar();
+    }, (data) => RouteManager().popUntil(predicate: (route) => route.settings.name.isEquals(AppPageRoutes.walletManage.name)));
+  }
+
+  Future<void> importWallet({required String password}) async {}
 }
