@@ -10,6 +10,6 @@ class AppEnvironment {
   static final AppEnvironment _instance = AppEnvironment._();
 
   String get fileName => kDebugMode ? ".env.dev" : ".env.prod";
-  String get domain => dotenv.get('COIN_MARKET_CAP_DOMAIN', fallback: 'BASE_URL not found');
-  String get apiKey => dotenv.get('X-CMC_PRO_API_KEY', fallback: 'X-CMC_PRO_API_KEY not found');
+  String get domain => dotenv.get('COIN_GEKKO_DOMAIN', fallback: 'BASE_URL not found');
+  String get apiKey => dotenv.get('X-x_cg_demo_api_key', fallback: 'X-x_cg_demo_api_key not found');
 }
