@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
+import 'package:paribu_mobile/core/functions/remove_focus.dart';
 
 class AppScaffold extends StatelessWidget {
   final Key? scaffoldKey;
@@ -33,17 +34,20 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Scaffold(
-          key: scaffoldKey,
-          backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
-          appBar: appBar,
-          body: body,
-          drawer: drawer,
-          bottomNavigationBar: bottomNavigationBar,
-          floatingActionButton: floatingActionButton,
-          floatingActionButtonLocation: floatingActionButtonLocation ?? FloatingActionButtonLocation.miniCenterFloat,
-          bottomSheet: bottomSheet,
-          resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+        GestureDetector(
+          onTap: removeFocus,
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+            appBar: appBar,
+            body: body,
+            drawer: drawer,
+            bottomNavigationBar: bottomNavigationBar,
+            floatingActionButton: floatingActionButton,
+            floatingActionButtonLocation: floatingActionButtonLocation ?? FloatingActionButtonLocation.miniCenterFloat,
+            bottomSheet: bottomSheet,
+            resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+          ),
         ),
         Visibility(
           visible: isLoading,

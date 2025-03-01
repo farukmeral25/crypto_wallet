@@ -25,7 +25,7 @@ class WalletCubit extends Cubit<WalletState> {
     final fetchWalletEither = await _walletRepo.fetchWallets();
     fetchWalletEither.fold(
       (failure) {
-        emit(state.copyWith(wallets: [], walletsStatus: UIStateStatus.error, failure: failure));
+        emit(state.copyWith(wallets: [], walletsStatus: UIStateStatus.success, failure: failure));
       },
       (data) {
         emit(state.copyWith(wallets: data, walletsStatus: UIStateStatus.success));
@@ -39,10 +39,15 @@ class WalletCubit extends Cubit<WalletState> {
       if (controller.text.isEmpty) return;
 
       final createWalletEither = await _walletRepo.createWallet(controller.text);
-      createWalletEither.fold((failure) {}, (data) {
-        _walletRepo.saveWallets([...state.wallets, data]);
-        emit(state.copyWith(wallets: [...state.wallets, data]));
-      });
+      createWalletEither.fold(
+        (failure) {
+          failure.showSnackBar();
+        },
+        (data) {
+          _walletRepo.saveWallets([...state.wallets, data]);
+          emit(state.copyWith(wallets: [...state.wallets, data]));
+        },
+      );
     } finally {
       emit(state.copyWith(isLoading: false));
       RouteManager().pop();

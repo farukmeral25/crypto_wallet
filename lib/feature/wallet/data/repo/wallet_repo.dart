@@ -63,7 +63,7 @@ class WalletRepo implements IWalletRepo {
   Future<Either<Failure, void>> exportWallet(String password, WalletDto wallet) async {
     try {
       String jsonWallet = jsonEncode(wallet.toJson());
-      await AppFilePicker.exportFile(password: password, data: {"wallet": jsonWallet}, path: "wallet_data.json");
+      await AppFilePicker.exportFile(password: password, data: {"wallet": jsonWallet}, path: "wallet_${wallet.name}.json");
       return Right(null);
     } catch (e) {
       return Left(ServiceFailure(error: "Export Wallet Err: $e"));
