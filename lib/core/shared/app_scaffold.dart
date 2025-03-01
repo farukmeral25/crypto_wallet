@@ -32,11 +32,11 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GestureDetector(
-          onTap: removeFocus,
-          child: Scaffold(
+    return GestureDetector(
+      onTap: removeFocus,
+      child: Stack(
+        children: [
+          Scaffold(
             key: scaffoldKey,
             backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
             appBar: appBar,
@@ -48,17 +48,17 @@ class AppScaffold extends StatelessWidget {
             bottomSheet: bottomSheet,
             resizeToAvoidBottomInset: resizeToAvoidBottomInset,
           ),
-        ),
-        Visibility(
-          visible: isLoading,
-          child: Stack(
-            children: [
-              ModalBarrier(dismissible: false, color: AppColors.foregroundPrimary.withValues(alpha: .2)),
-              const Center(child: CircularProgressIndicator()),
-            ],
+          Visibility(
+            visible: isLoading,
+            child: Stack(
+              children: [
+                ModalBarrier(dismissible: false, color: AppColors.foregroundPrimary.withValues(alpha: .2)),
+                const Center(child: CircularProgressIndicator()),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

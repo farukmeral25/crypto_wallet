@@ -23,7 +23,7 @@ class AppFilePicker {
     return (hashedInputPassword.isEquals(fileData?["password_hash"])) ? fileData : null;
   }
 
-  static Future<void> _saveToFile(String content, path) async {
+  static Future<void> _saveToFile(String content, String path) async {
     final directory = await getApplicationDocumentsDirectory();
     final file = File('${directory.path}/$path');
 
@@ -37,7 +37,7 @@ class AppFilePicker {
   }
 
   static Future<Map<String, dynamic>?> _readFromFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: false);
+    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: false, type: FileType.custom, allowedExtensions: ['json']);
 
     if (result != null) {
       File file = File(result.files.single.path!);

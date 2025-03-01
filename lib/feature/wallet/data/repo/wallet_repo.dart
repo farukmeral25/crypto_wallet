@@ -62,8 +62,7 @@ class WalletRepo implements IWalletRepo {
   @override
   Future<Either<Failure, void>> exportWallet(String password, WalletDto wallet) async {
     try {
-      String jsonWallet = jsonEncode(wallet.toJson());
-      await AppFilePicker.exportFile(password: password, data: {"wallet": jsonWallet}, path: "wallet_${wallet.name}.json");
+      await AppFilePicker.exportFile(password: password, data: {"wallet": wallet.toJson()}, path: "wallet_${wallet.name}.json");
       return Right(null);
     } catch (e) {
       return Left(ServiceFailure(error: "Export Wallet Err: $e"));
@@ -74,11 +73,8 @@ class WalletRepo implements IWalletRepo {
   Future<Either<Failure, WalletDto>> importWallet(String password) async {
     try {
       final fileData = await AppFilePicker.importFile(password);
-      if (fileData != null && fileData.containsKey('password') && fileData.containsKey('wallet')) {
-        String walletJson = fileData['wallet'];
-        Map<String, dynamic> walletMap = jsonDecode(walletJson);
-
-        return Right(WalletDto.fromJson(walletMap));
+      if (fileData != null && fileData.containsKey('password_hash') && fileData.containsKey('wallet')) {
+        return Right(WalletDto.fromJson(fileData['wallet']));
       }
       return Left(NullPointerFailure(error: "Import Wallet Err: Şifreleme hatası"));
     } catch (e) {

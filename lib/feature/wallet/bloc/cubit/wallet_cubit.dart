@@ -69,7 +69,6 @@ class WalletCubit extends Cubit<WalletState> {
         failure.showSnackBar();
       },
       (data) {
-        print("export");
         RouteManager().popUntil(predicate: (route) => route.settings.name.isEquals(AppPageRoutes.walletManage.name));
       },
     );
@@ -79,8 +78,8 @@ class WalletCubit extends Cubit<WalletState> {
     try {
       final importWalletEither = await _walletRepo.importWallet(password);
       importWalletEither.fold((failure) => failure.showSnackBar(), (data) {
-        print("import");
         emit(state.copyWith(wallets: [...state.wallets, data]));
+        _walletRepo.saveWallets(state.wallets);
       });
     } finally {
       RouteManager().popUntil(predicate: (route) => route.isFirst);

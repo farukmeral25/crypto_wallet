@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paribu_mobile/core/constant/app_input_formatters.dart';
 import 'package:paribu_mobile/core/extension/generic_extension.dart';
 import 'package:paribu_mobile/core/extension/num_extension.dart';
+import 'package:paribu_mobile/core/functions/remove_focus.dart';
 import 'package:paribu_mobile/core/shared/app_text_field.dart';
 
 class OtpField extends StatefulWidget {
@@ -55,6 +56,7 @@ class _OtpFieldState extends State<OtpField> {
                         _moveToPreviousFocus(nodes.indexOf(e));
                       }
                       if (text.length.isEquals(nodes.length)) {
+                        removeFocus();
                         widget.onSubmit(text);
                       }
                     },
