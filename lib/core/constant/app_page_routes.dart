@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:paribu_mobile/feature/bottom_nav_bar/view/page/bottom_nav_bar_page.dart';
+import 'package:paribu_mobile/feature/wallet/view/page/create_wallet_page.dart';
 import 'package:paribu_mobile/feature/wallet/view/page/wallet_manage_page.dart';
 
 enum AppPageRoutes {
   bottomNavBar(page: BottomNavBarPage()),
-  walletManage(page: WalletManagePage());
+  walletManage(page: WalletManagePage()),
+  createWallet(page: CreateWalletPage());
 
   final Widget page;
 

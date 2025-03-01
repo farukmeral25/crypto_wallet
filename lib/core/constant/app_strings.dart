@@ -10,4 +10,5 @@ class AppStrings {
   static const String scanQrCode = "Scan the QR code";
   static const String publicAddress = "Public Address";
   static const String mnemonicPhrase = "Mnemonic Phrase";
+  static const String walletName = "Wallet Name";
 }
