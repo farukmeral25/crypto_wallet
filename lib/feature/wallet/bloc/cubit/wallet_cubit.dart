@@ -59,10 +59,26 @@ class WalletCubit extends Cubit<WalletState> {
 
   Future<void> exportWallet({required WalletDto wallet, required String password}) async {
     final exportWalletEither = await _walletRepo.exportWallet(password, wallet);
-    exportWalletEither.fold((failure) {
-      failure.showSnackBar();
-    }, (data) => RouteManager().popUntil(predicate: (route) => route.settings.name.isEquals(AppPageRoutes.walletManage.name)));
+    exportWalletEither.fold(
+      (failure) {
+        failure.showSnackBar();
+      },
+      (data) {
+        print("export");
+        RouteManager().popUntil(predicate: (route) => route.settings.name.isEquals(AppPageRoutes.walletManage.name));
+      },
+    );
   }
 
-  Future<void> importWallet({required String password}) async {}
+  Future<void> importWallet({required String password}) async {
+    try {
+      final importWalletEither = await _walletRepo.importWallet(password);
+      importWalletEither.fold((failure) => failure.showSnackBar(), (data) {
+        print("import");
+        emit(state.copyWith(wallets: [...state.wallets, data]));
+      });
+    } finally {
+      RouteManager().popUntil(predicate: (route) => route.isFirst);
+    }
+  }
 }

@@ -70,7 +70,7 @@ class _WalletBodyState extends State<WalletBody> {
               AppButton.text(
                 AppStrings.importWallet,
                 onTap: () {
-                  //TODO: Import Wallet
+                  RouteManager().navigateTo(AppPageRoutes.enterPinCode);
                 },
               ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
             ],

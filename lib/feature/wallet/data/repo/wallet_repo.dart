@@ -69,4 +69,20 @@ class WalletRepo implements IWalletRepo {
       return Left(ServiceFailure(error: "Export Wallet Err: $e"));
     }
   }
+
+  @override
+  Future<Either<Failure, WalletDto>> importWallet(String password) async {
+    try {
+      final fileData = await AppFilePicker.importFile(password);
+      if (fileData != null && fileData.containsKey('password') && fileData.containsKey('wallet')) {
+        String walletJson = fileData['wallet'];
+        Map<String, dynamic> walletMap = jsonDecode(walletJson);
+
+        return Right(WalletDto.fromJson(walletMap));
+      }
+      return Left(NullPointerFailure(error: "Import Wallet Err: Şifreleme hatası"));
+    } catch (e) {
+      return Left(ServiceFailure(error: "Import Wallet Err: $e"));
+    }
+  }
 }
