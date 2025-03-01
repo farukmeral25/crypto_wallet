@@ -35,5 +35,5 @@ Future<void> init() async {
 
   //*Markets
   sl.registerLazySingleton<IMarketRepo>(() => MarketRepo());
-  sl.registerFactory<MarketCubit>(() => MarketCubit());
+  sl.registerFactory<MarketCubit>(() => MarketCubit()..initialize());
 }
