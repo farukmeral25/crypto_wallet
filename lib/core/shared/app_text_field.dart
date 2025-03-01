@@ -10,5 +10,14 @@ class AppTextField extends TextField {
         style: AppTextStyles.px32w500,
         decoration: InputDecoration(hintText: hintText, focusedBorder: InputBorder.none, enabledBorder: InputBorder.none),
       );
-  AppTextField.border({super.key, super.controller, super.inputFormatters}) : super(onTapOutside: (event) => removeFocus());
+  AppTextField.border({
+    super.key,
+    super.onTap,
+    super.keyboardType,
+    super.focusNode,
+    super.controller,
+    super.inputFormatters,
+    super.onChanged,
+    super.textInputAction,
+  }) : super(textAlign: TextAlign.center, onTapOutside: (event) => removeFocus());
 }
