@@ -38,7 +38,7 @@ class WalletManagePage extends StatelessWidget {
           AppButton.filled(
             AppStrings.exportWallet,
             onTap: () {
-              RouteManager().navigateTo(AppPageRoutes.enterPinCode);
+              RouteManager().navigateTo(AppPageRoutes.enterPinCode, arguments: wallet);
             },
           ).toSliverPadding(padding: REdgeInsets.symmetric(horizontal: 16)),
           AppButton.text(

@@ -55,4 +55,6 @@ class WalletCubit extends Cubit<WalletState> {
     emit(state.copyWith(wallets: [...wallets]));
     _walletRepo.saveWallets([...wallets]);
   }
+
+  void exportWallet(WalletDto wallet) {}
 }

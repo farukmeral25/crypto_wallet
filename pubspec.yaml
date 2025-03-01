@@ -24,6 +24,7 @@ dependencies:
   bip39: ^1.0.6
   web3dart: ^2.7.3
   encrypt: ^5.0.0
+  file_picker: ^9.0.2
 
 dev_dependencies:
   flutter_test:
