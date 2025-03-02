@@ -33,7 +33,7 @@ class CoinChart extends StatelessWidget {
         child: LineChart(
           LineChartData(
             minX: 0,
-            maxX: 10,
+            maxX: marketCapPrices.length.toDouble(),
             minY: minMarketCap?.marketCap ?? 0,
             maxY: maxMarketCap?.marketCap ?? 0,
             titlesData: FlTitlesData(show: false),

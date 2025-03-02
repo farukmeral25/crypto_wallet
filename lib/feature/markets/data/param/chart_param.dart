@@ -8,12 +8,10 @@ part 'chart_param.g.dart';
 class ChartParam {
   @JsonKey(name: "vs_currency", defaultValue: "usd")
   final String currency;
-  @JsonKey(defaultValue: 10)
-  final int days;
-  @JsonKey(defaultValue: "daily")
-  final String interval;
+  final int from;
+  final int to;
 
-  ChartParam({this.currency = "usd", this.days = 10, this.interval = "daily"});
+  ChartParam({this.currency = "usd", required this.from, required this.to});
 
   factory ChartParam.fromJson(Map<String, dynamic> json) => _$ChartParamFromJson(json);
 
