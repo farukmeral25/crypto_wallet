@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:dartz/dartz.dart';
 import 'package:paribu_mobile/core/error/failure.dart';
@@ -26,8 +25,8 @@ class WalletRepo implements IWalletRepo {
     try {
       final mnemonic = bip39.generateMnemonic();
       final seed = bip39.mnemonicToSeed(mnemonic);
-      final seedInt = bytesToInt(seed);
-      final privateKey = EthPrivateKey.createRandom(Random(seedInt.toInt()));
+      final hex = bytesToHex(seed);
+      final privateKey = EthPrivateKey.fromHex(hex);
       final address = privateKey.address;
       final recoveryPhrase = AESHelper.encryptData(mnemonic);
 
