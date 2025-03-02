@@ -5,6 +5,7 @@ import 'package:paribu_mobile/core/constant/api/api_service.dart';
 import 'package:paribu_mobile/core/utils/dio_manager.dart';
 import 'package:paribu_mobile/core/utils/local_services/service/i_local_service.dart';
 import 'package:paribu_mobile/core/utils/local_services/service/local_service.dart';
+import 'package:paribu_mobile/core/utils/wallet_kit_manager.dart';
 import 'package:paribu_mobile/feature/bottom_nav_bar/bloc/cubit/bottom_nav_bar_cubit.dart';
 import 'package:paribu_mobile/feature/markets/bloc/cubit/market_cubit.dart';
 import 'package:paribu_mobile/feature/markets/data/repo/i_market_repo.dart';
@@ -18,6 +19,7 @@ GetIt sl = GetIt.instance;
 Future<void> init() async {
   // client
   sl.registerLazySingleton<Dio>(() => DioManager.getDio());
+  sl.registerLazySingleton<WalletKitManager>(() => WalletKitManager()..createWalletKit());
 
   // Api Service
   sl.registerLazySingleton(() => ApiService(sl()));
