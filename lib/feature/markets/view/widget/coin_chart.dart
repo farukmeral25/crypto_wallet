@@ -16,61 +16,58 @@ class CoinChart extends StatelessWidget {
     MarketCapPrice? minMarketCap;
     MarketCapPrice? maxMarketCap;
     final linearGradient = LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
       colors: isUp ? [AppColors.green, AppColors.green.withAlpha(25)] : [AppColors.red, AppColors.red.withAlpha(25)],
     );
+
     if (marketCapPrices.isNotEmpty) {
       minMarketCap = marketCapPrices.reduce((a, b) => a.marketCap < b.marketCap ? a : b);
       maxMarketCap = marketCapPrices.reduce((a, b) => a.marketCap > b.marketCap ? a : b);
     }
 
-    if (minMarketCap.isNull && maxMarketCap.isNull) {
-      return AppSizedBox.shrink();
-    }
-
-    return AppSizedBox.height(
-      140,
-      child: LineChart(
-        LineChartData(
-          minX: 0,
-          maxX: 10,
-          minY: minMarketCap?.marketCap ?? 0,
-          maxY: maxMarketCap?.marketCap ?? 0,
-          titlesData: FlTitlesData(show: false),
-          borderData: FlBorderData(show: false),
-          gridData: FlGridData(show: false),
-          lineTouchData: LineTouchData(
-            touchTooltipData: LineTouchTooltipData(
-              getTooltipColor: (touchedSpot) => linearGradient.colors.last,
-              getTooltipItems: (touchedSpots) {
-                return [
-                  LineTooltipItem(
-                    "\$${touchedSpots.first.y.toStringAsFixed(2)}",
-                    AppTextStyles.px12w400.copyWith(color: linearGradient.colors.first),
-                  ),
-                ];
-              },
-            ),
-          ),
-          lineBarsData: [
-            LineChartBarData(
-              spots:
-                  marketCapPrices.map((e) {
-                    return FlSpot(marketCapPrices.indexOf(e).toDouble(), e.marketCap);
-                  }).toList(),
-
-              gradient: linearGradient,
-              belowBarData: BarAreaData(
-                show: true,
-                gradient: LinearGradient(
-                  colors: [
-                    ColorTween(begin: linearGradient.colors.first, end: linearGradient.colors.last).lerp(0.2)!.withValues(alpha: 0.1),
-                    ColorTween(begin: linearGradient.colors.first, end: linearGradient.colors.last).lerp(0.2)!.withValues(alpha: 0.1),
-                  ],
-                ),
+    return Visibility(
+      visible: !(minMarketCap.isNull && maxMarketCap.isNull),
+      child: AppSizedBox.height(
+        140,
+        child: LineChart(
+          LineChartData(
+            minX: 0,
+            maxX: 10,
+            minY: minMarketCap?.marketCap ?? 0,
+            maxY: maxMarketCap?.marketCap ?? 0,
+            titlesData: FlTitlesData(show: false),
+            borderData: FlBorderData(show: false),
+            gridData: FlGridData(show: false),
+            lineTouchData: LineTouchData(
+              touchTooltipData: LineTouchTooltipData(
+                getTooltipColor: (touchedSpot) => linearGradient.colors.last,
+                getTooltipItems: (touchedSpots) {
+                  return [
+                    LineTooltipItem(
+                      "\$${touchedSpots.first.y.toStringAsFixed(2)}",
+                      AppTextStyles.px12w400.copyWith(color: linearGradient.colors.first),
+                    ),
+                  ];
+                },
               ),
-              dotData: FlDotData(show: false),
             ),
-          ],
+            lineBarsData: [
+              LineChartBarData(
+                spots:
+                    marketCapPrices.map((e) {
+                      return FlSpot(marketCapPrices.indexOf(e).toDouble(), e.marketCap);
+                    }).toList(),
+
+                gradient: linearGradient,
+                belowBarData: BarAreaData(
+                  show: true,
+                  gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: linearGradient.colors),
+                ),
+                dotData: FlDotData(show: false),
+              ),
+            ],
+          ),
         ),
       ),
     );
