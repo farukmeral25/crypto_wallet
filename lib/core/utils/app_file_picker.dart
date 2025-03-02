@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 
 class AppFilePicker {
   static Future<void> exportFile({required String password, required Map<String, dynamic> data, required String path}) async {
-    String hashedPassword = _hashPassword(password);
+    String hashedPassword = _encryptPassword(password);
 
     data.addAll({'password_hash': hashedPassword});
 
@@ -18,7 +18,7 @@ class AppFilePicker {
 
   static Future<Map<String, dynamic>?> importFile(String password) async {
     Map<String, dynamic>? fileData = await _readFromFile();
-    String hashedInputPassword = _hashPassword(password);
+    String hashedInputPassword = _encryptPassword(password);
 
     return (hashedInputPassword.isEquals(fileData?["password_hash"])) ? fileData : null;
   }
@@ -30,7 +30,7 @@ class AppFilePicker {
     await file.writeAsString(content);
   }
 
-  static String _hashPassword(String password) {
+  static String _encryptPassword(String password) {
     return AESHelper.encryptData(password);
   }
 
