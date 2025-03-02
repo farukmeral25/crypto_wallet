@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:paribu_mobile/core/constant/app_page_routes.dart';
 import 'package:paribu_mobile/core/constant/app_strings.dart';
 import 'package:paribu_mobile/core/constant/asset_path.dart';
+import 'package:paribu_mobile/core/extension/generic_extension.dart';
 import 'package:paribu_mobile/core/extension/list_extension.dart';
 import 'package:paribu_mobile/core/extension/widget_extension.dart';
 import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
@@ -43,6 +44,7 @@ class _WalletBodyState extends State<WalletBody> {
                     final wallet = state.wallets[index];
                     return Dismissible(
                       key: Key(wallet.address),
+                      confirmDismiss: (direction) async => direction.isEquals(DismissDirection.endToStart),
                       onDismissed: (_) => cubit.deleteWallet(wallet),
                       child: ListTile(
                         onTap: () => RouteManager().navigateTo(AppPageRoutes.walletManage, arguments: wallet),
