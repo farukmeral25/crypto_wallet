@@ -20,6 +20,7 @@ class AppButtonTheme {
       alignment: Alignment.center,
       maximumSize: WidgetStatePropertyAll(Size.fromWidth(double.infinity)),
       fixedSize: WidgetStatePropertyAll(Size.fromWidth(double.maxFinite)),
+      shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6.r)))),
       padding: WidgetStatePropertyAll(REdgeInsets.symmetric(horizontal: 16, vertical: 14)),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),
