@@ -35,7 +35,7 @@ class MarketCubit extends Cubit<MarketState> {
         final updatedCoins =
             state.coins.map((coin) {
               if (coin.id.isEquals(id)) {
-                return coin.copyWith(marketCapPoints: data.marketCaps);
+                return coin.copyWith(marketCapPrices: data.marketCaps);
               }
               return coin;
             }).toList();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
 import 'package:paribu_mobile/core/extension/num_extension.dart';
-import 'package:paribu_mobile/feature/markets/data/dto/market_cap_point_dto.dart';
+import 'package:paribu_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
 
 part 'coin_dto.g.dart';
 
@@ -17,7 +17,7 @@ class CoinDto {
   @JsonKey(name: "market_cap_change_percentage_24h")
   final double changePercentage24h;
   @JsonKey(includeFromJson: false, includeToJson: false)
-  final List<MarketCapPrice>? marketCapPoints;
+  final List<MarketCapPrice>? marketCapPrices;
 
   CoinDto({
     required this.id,
@@ -26,7 +26,7 @@ class CoinDto {
     required this.image,
     required this.currentPrice,
     required this.changePercentage24h,
-    this.marketCapPoints,
+    this.marketCapPrices,
   });
 
   factory CoinDto.fromJson(Map<String, dynamic> json) => _$CoinDtoFromJson(json);
@@ -45,7 +45,7 @@ class CoinDto {
     String? image,
     double? currentPrice,
     double? changePercentage24h,
-    List<MarketCapPrice>? marketCapPoints,
+    List<MarketCapPrice>? marketCapPrices,
   }) {
     return CoinDto(
       id: id ?? this.id,
@@ -54,7 +54,7 @@ class CoinDto {
       image: image ?? this.image,
       currentPrice: currentPrice ?? this.currentPrice,
       changePercentage24h: changePercentage24h ?? this.changePercentage24h,
-      marketCapPoints: marketCapPoints ?? this.marketCapPoints,
+      marketCapPrices: marketCapPrices ?? this.marketCapPrices,
     );
   }
 }

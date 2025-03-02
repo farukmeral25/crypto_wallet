@@ -27,7 +27,7 @@ class MarketBody extends StatelessWidget {
                 final coin = state.coins[index];
                 return Column(
                   spacing: 8.h,
-                  children: [CoinInfoBar(coin: coin), CoinChart(marketCapPrices: coin.marketCapPoints.getValueOrDefault, isUp: coin.isUp)],
+                  children: [CoinInfoBar(coin: coin), CoinChart(marketCapPrices: coin.marketCapPrices.getValueOrDefault, isUp: coin.isUp)],
                 );
               },
               itemCount: state.coins.itemCount,

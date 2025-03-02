@@ -4,7 +4,7 @@ import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
 import 'package:paribu_mobile/core/constant/theme/app_text_styles.dart';
 import 'package:paribu_mobile/core/extension/generic_extension.dart';
 import 'package:paribu_mobile/core/shared/app_sized_box.dart';
-import 'package:paribu_mobile/feature/markets/data/dto/market_cap_point_dto.dart';
+import 'package:paribu_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
 
 class CoinChart extends StatelessWidget {
   const CoinChart({super.key, required this.marketCapPrices, this.isUp = true});

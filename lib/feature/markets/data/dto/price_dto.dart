@@ -1,4 +1,4 @@
-import 'package:paribu_mobile/feature/markets/data/dto/market_cap_point_dto.dart';
+import 'package:paribu_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
 
 class PriceDto {
   final List<MarketCapPrice> marketCaps;
