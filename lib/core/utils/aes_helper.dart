@@ -4,15 +4,15 @@ class AESHelper {
   static final _key = encrypt.Key.fromLength(32);
   static final _iv = encrypt.IV.fromLength(16);
 
-  static String encryptMnemonic(String mnemonic) {
+  static String encryptData(String data) {
     final encrypter = encrypt.Encrypter(encrypt.AES(_key));
-    final encrypted = encrypter.encrypt(mnemonic, iv: _iv);
+    final encrypted = encrypter.encrypt(data, iv: _iv);
     return encrypted.base64;
   }
 
-  static String decryptMnemonic(String encryptedMnemonic) {
+  static String decryptData(String data) {
     final encrypter = encrypt.Encrypter(encrypt.AES(_key));
-    final decrypted = encrypter.decrypt(encrypt.Encrypted.fromBase64(encryptedMnemonic), iv: _iv);
+    final decrypted = encrypter.decrypt(encrypt.Encrypted.fromBase64(data), iv: _iv);
     return decrypted;
   }
 }

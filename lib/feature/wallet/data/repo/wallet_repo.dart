@@ -16,6 +16,7 @@ import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
 import 'package:paribu_mobile/feature/wallet/data/repo/i_wallet_repo.dart';
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:web3dart/credentials.dart';
+import 'package:web3dart/crypto.dart';
 
 class WalletRepo implements IWalletRepo {
   final _localService = sl<ILocalService>();
@@ -24,9 +25,11 @@ class WalletRepo implements IWalletRepo {
   Future<Either<Failure, WalletDto>> createWallet(String name) async {
     try {
       final mnemonic = bip39.generateMnemonic();
-      final privateKey = EthPrivateKey.createRandom(Random());
+      final seed = bip39.mnemonicToSeed(mnemonic);
+      final seedInt = bytesToInt(seed);
+      final privateKey = EthPrivateKey.createRandom(Random(seedInt.toInt()));
       final address = privateKey.address;
-      final encryptedMnemonic = AESHelper.encryptMnemonic(mnemonic);
+      final encryptedMnemonic = AESHelper.encryptData(mnemonic);
 
       return Right(WalletDto(name: name, address: address.hexEip55, encryptedMnemonic: encryptedMnemonic));
     } catch (e) {
