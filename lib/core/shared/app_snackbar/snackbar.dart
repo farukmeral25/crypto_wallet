@@ -9,7 +9,7 @@ import 'package:paribu_mobile/core/shared/app_icon.dart';
 
 class AppSnackBar {
   static void show(String title, {String? description}) {
-    AppKeys.scaffoldMessengerKey.currentState!.showSnackBar(
+    AppKeys.scaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
         dismissDirection: DismissDirection.horizontal,
@@ -23,7 +23,7 @@ class AppSnackBar {
             Padding(
               padding: REdgeInsets.only(left: 12.0),
               child: GestureDetector(
-                onTap: AppKeys.scaffoldMessengerKey.currentState!.hideCurrentSnackBar,
+                onTap: AppKeys.scaffoldMessengerKey.currentState?.hideCurrentSnackBar,
                 child: AppIcon(assetPath: AssetPaths().close, color: AppColors.white),
               ),
             ),
