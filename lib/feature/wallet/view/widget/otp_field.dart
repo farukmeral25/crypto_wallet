@@ -74,7 +74,7 @@ class _OtpFieldState extends State<OtpField> {
   }
 
   void _moveToPreviousFocus(int index) {
-    if (index != 0) {
+    if (!index.isZero) {
       FocusScope.of(context).requestFocus(nodes[index - 1]);
     }
   }

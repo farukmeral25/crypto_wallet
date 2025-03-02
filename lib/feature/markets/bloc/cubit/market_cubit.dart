@@ -15,6 +15,7 @@ class MarketCubit extends Cubit<MarketState> {
     final fetchCoinsEither = await _marketRepo.fetchCoins();
     fetchCoinsEither.fold((failure) => emit(state.copyWith(failure: failure, coinStatus: UIStateStatus.error)), (data) {
       emit(state.copyWith(coinStatus: UIStateStatus.success, coins: data));
+      //can be executed when [coin info bar] is initialized but change infra
       fetchCoinsMarketChart();
     });
   }

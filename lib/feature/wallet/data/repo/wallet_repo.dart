@@ -58,7 +58,7 @@ class WalletRepo implements IWalletRepo {
         return Right(wallets);
       });
     } catch (e) {
-      return Left(ServiceFailure(error: "Save Wallet Err: $e"));
+      return Left(ServiceFailure(error: "Fetch Wallet Err: $e"));
     }
   }
 

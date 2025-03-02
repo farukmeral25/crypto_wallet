@@ -33,7 +33,7 @@ Future<void> init() async {
 
   //*Wallet
   sl.registerLazySingleton<IWalletRepo>(() => WalletRepo());
-  sl.registerLazySingleton<WalletCubit>(() => WalletCubit());
+  sl.registerLazySingleton<WalletCubit>(() => WalletCubit()..initialize());
 
   //*Markets
   sl.registerLazySingleton<IMarketRepo>(() => MarketRepo());

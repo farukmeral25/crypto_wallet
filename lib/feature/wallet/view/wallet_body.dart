@@ -16,23 +16,12 @@ import 'package:paribu_mobile/core/utils/route_manager.dart';
 import 'package:paribu_mobile/feature/wallet/bloc/cubit/wallet_cubit.dart';
 import 'package:paribu_mobile/feature/wallet/bloc/state/wallet_state.dart';
 
-class WalletBody extends StatefulWidget {
+class WalletBody extends StatelessWidget {
   const WalletBody({super.key});
 
   @override
-  State<WalletBody> createState() => _WalletBodyState();
-}
-
-class _WalletBodyState extends State<WalletBody> {
-  final cubit = sl<WalletCubit>();
-  @override
-  void initState() {
-    super.initState();
-    cubit.initialize();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final cubit = sl<WalletCubit>();
     return BlocBuilder<WalletCubit, WalletState>(
       bloc: cubit,
       builder:
