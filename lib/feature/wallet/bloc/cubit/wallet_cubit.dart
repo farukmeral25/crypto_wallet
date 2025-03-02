@@ -16,9 +16,7 @@ class WalletCubit extends Cubit<WalletState> {
 
   final TextEditingController controller = TextEditingController();
 
-  Future<void> initialize() async {
-    _fetchWallets();
-  }
+  Future<void> initialize() async => _fetchWallets();
 
   Future<void> _fetchWallets() async {
     emit(state.copyWith(walletsStatus: UIStateStatus.loading));
