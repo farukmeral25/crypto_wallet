@@ -19,17 +19,17 @@ class AppSnackBar {
         content: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(child: Text(title, style: AppTextStyles.px14w500)),
+            Expanded(child: Text(title, style: AppTextStyles.px14w500.copyWith(color: AppColors.white))),
             Padding(
               padding: REdgeInsets.only(left: 12.0),
               child: GestureDetector(
                 onTap: AppKeys.scaffoldMessengerKey.currentState!.hideCurrentSnackBar,
-                child: AppIcon(assetPath: AssetPaths().close),
+                child: AppIcon(assetPath: AssetPaths().close, color: AppColors.white),
               ),
             ),
           ],
         ),
-        backgroundColor: AppColors.foregroundTertiary,
+        backgroundColor: AppColors.red,
         behavior: SnackBarBehavior.floating,
       ),
     );
