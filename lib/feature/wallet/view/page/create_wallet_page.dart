@@ -57,12 +57,7 @@ class CreateWalletPage extends StatelessWidget {
                       spacing: 12.h,
                       children: [
                         Text(AppStrings.max60Characters, style: AppTextStyles.px12w400.copyWith(color: AppColors.foregroundSecondary)),
-                        AppButton.filled(
-                          onTap: () {
-                            cubit.createWallet();
-                          },
-                          AppStrings.createWallet,
-                        ),
+                        AppButton.filled(onTap: cubit.createWallet, AppStrings.createWallet),
                       ],
                     ),
                   ),

@@ -6,9 +6,10 @@ part 'wallet_dto.g.dart';
 class WalletDto {
   final String name;
   final String address;
-  final String encryptedMnemonic;
+  final String mnemonic;
+  final String recoveryPhrase;
 
-  WalletDto({required this.name, required this.address, required this.encryptedMnemonic});
+  WalletDto({required this.name, required this.address, required this.mnemonic, required this.recoveryPhrase});
 
   factory WalletDto.fromJson(Map<String, dynamic> json) => _$WalletDtoFromJson(json);
 

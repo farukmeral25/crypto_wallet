@@ -32,7 +32,7 @@ class WalletManagePage extends StatelessWidget {
             children: [
               _buildListTile(title: AppStrings.publicAddress, subtitle: wallet.address),
               Divider(indent: 16, endIndent: 16, height: 1),
-              _buildListTile(title: AppStrings.mnemonicPhrase, subtitle: wallet.encryptedMnemonic),
+              _buildListTile(title: AppStrings.mnemonicPhrase, subtitle: wallet.mnemonic),
             ],
           ).toSliver,
           AppSizedBox.height(48).toSliver,

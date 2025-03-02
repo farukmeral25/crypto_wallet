@@ -29,9 +29,9 @@ class WalletRepo implements IWalletRepo {
       final seedInt = bytesToInt(seed);
       final privateKey = EthPrivateKey.createRandom(Random(seedInt.toInt()));
       final address = privateKey.address;
-      final encryptedMnemonic = AESHelper.encryptData(mnemonic);
+      final recoveryPhrase = AESHelper.encryptData(mnemonic);
 
-      return Right(WalletDto(name: name, address: address.hexEip55, encryptedMnemonic: encryptedMnemonic));
+      return Right(WalletDto(name: name, address: address.hexEip55, mnemonic: mnemonic, recoveryPhrase: recoveryPhrase));
     } catch (e) {
       return Left(ServiceFailure(error: "Create Wallet Err: $e"));
     }

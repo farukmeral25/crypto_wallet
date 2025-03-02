@@ -33,10 +33,11 @@ class WalletCubit extends Cubit<WalletState> {
     );
   }
 
-  void createWallet() async {
+  Future<void> createWallet() async {
+    if (controller.text.isEmpty || state.isLoading) return;
+
     try {
       emit(state.copyWith(isLoading: true));
-      if (controller.text.isEmpty) return;
 
       final createWalletEither = await _walletRepo.createWallet(controller.text);
       createWalletEither.fold(
@@ -46,20 +47,13 @@ class WalletCubit extends Cubit<WalletState> {
         (data) {
           _walletRepo.saveWallets([...state.wallets, data]);
           emit(state.copyWith(wallets: [...state.wallets, data]));
+          RouteManager().pop();
+          controller.clear();
         },
       );
     } finally {
       emit(state.copyWith(isLoading: false));
-      RouteManager().pop();
-      controller.clear();
     }
-  }
-
-  void deleteWallet(WalletDto wallet) {
-    final wallets = List<WalletDto>.from(state.wallets);
-    wallets.removeWhere((element) => element.address.isEquals(wallet.address));
-    emit(state.copyWith(wallets: [...wallets]));
-    _walletRepo.saveWallets([...wallets]);
   }
 
   Future<void> exportWallet({required WalletDto wallet, required String password}) async {
@@ -84,5 +78,12 @@ class WalletCubit extends Cubit<WalletState> {
     } finally {
       RouteManager().popUntil(predicate: (route) => route.isFirst);
     }
+  }
+
+  void deleteWallet(WalletDto wallet) {
+    final wallets = List<WalletDto>.from(state.wallets);
+    wallets.removeWhere((element) => element.address.isEquals(wallet.address));
+    emit(state.copyWith(wallets: [...wallets]));
+    _walletRepo.saveWallets([...wallets]);
   }
 }
