@@ -17,7 +17,7 @@ class CoinDto {
   @JsonKey(name: "market_cap_change_percentage_24h")
   final double changePercentage24h;
   @JsonKey(includeFromJson: false, includeToJson: false)
-  final List<MarketCapPoint>? marketCapPoints;
+  final List<MarketCapPrice>? marketCapPoints;
 
   CoinDto({
     required this.id,
@@ -36,6 +36,7 @@ class CoinDto {
   Color get textColor => changePercentage24h > 0 ? AppColors.green : (changePercentage24h.isZero ? AppColors.foregroundPrimary : AppColors.red);
   double get value => changePercentage24h > 0 ? changePercentage24h : changePercentage24h.abs();
   String get percentage => changePercentage24h > 0 ? "+%" : (changePercentage24h.isZero ? "%" : "-%");
+  bool get isUp => changePercentage24h > 0;
 
   CoinDto copyWith({
     String? id,
@@ -44,7 +45,7 @@ class CoinDto {
     String? image,
     double? currentPrice,
     double? changePercentage24h,
-    List<MarketCapPoint>? marketCapPoints,
+    List<MarketCapPrice>? marketCapPoints,
   }) {
     return CoinDto(
       id: id ?? this.id,

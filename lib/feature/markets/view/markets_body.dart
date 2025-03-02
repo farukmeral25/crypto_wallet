@@ -25,7 +25,10 @@ class MarketBody extends StatelessWidget {
             builder: ListView.separated(
               itemBuilder: (context, index) {
                 final coin = state.coins[index];
-                return Column(spacing: 8.h, children: [CoinInfoBar(coin: coin), Text("${coin.marketCapPoints?.length}"), CoinChart(coin: coin)]);
+                return Column(
+                  spacing: 8.h,
+                  children: [CoinInfoBar(coin: coin), CoinChart(marketCapPrices: coin.marketCapPoints.getValueOrDefault, isUp: coin.isUp)],
+                );
               },
               itemCount: state.coins.itemCount,
               separatorBuilder: (BuildContext context, int index) {
