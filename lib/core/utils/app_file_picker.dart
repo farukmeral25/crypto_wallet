@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:crypto/crypto.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:paribu_mobile/core/extension/generic_extension.dart';
+import 'package:paribu_mobile/core/utils/aes_helper.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppFilePicker {
@@ -31,9 +31,7 @@ class AppFilePicker {
   }
 
   static String _hashPassword(String password) {
-    var bytes = utf8.encode(password);
-    var digest = sha256.convert(bytes);
-    return digest.toString();
+    return AESHelper.encryptData(password);
   }
 
   static Future<Map<String, dynamic>?> _readFromFile() async {
