@@ -26,11 +26,12 @@ class WalletRepo implements IWalletRepo {
       final mnemonic = bip39.generateMnemonic();
       final seed = bip39.mnemonicToSeed(mnemonic);
       final hex = bytesToHex(seed);
+
       final privateKey = EthPrivateKey.fromHex(hex);
       final address = privateKey.address;
-      final recoveryPhrase = AESHelper.encryptData(mnemonic);
+      final recoveryPhrase = sl<AESHelper>().encryptData(mnemonic);
 
-      return Right(WalletDto(name: name, address: address.hexEip55, mnemonic: mnemonic, recoveryPhrase: recoveryPhrase));
+      return Right(WalletDto(name: name, address: address.hexEip55, recoveryPhrase: recoveryPhrase));
     } catch (e) {
       return Left(ServiceFailure(error: "Create Wallet Err: $e"));
     }

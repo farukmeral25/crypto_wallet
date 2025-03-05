@@ -7,7 +7,5 @@ abstract class Failure {
 
   String get message => error ?? toString();
 
-  void showSnackBar() {
-    AppSnackBar.show(message);
-  }
+  void showSnackBar() => AppSnackBar.show(message);
 }

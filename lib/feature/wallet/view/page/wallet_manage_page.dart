@@ -18,6 +18,7 @@ class WalletManagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final wallet = ModalRoute.of(context)?.settings.arguments as WalletDto;
+
     return AppScaffold(
       appBar: AppBar(
         leading: Padding(
@@ -32,7 +33,7 @@ class WalletManagePage extends StatelessWidget {
             children: [
               _buildListTile(title: AppStrings.publicAddress, subtitle: wallet.address),
               Divider(indent: 16, endIndent: 16, height: 1),
-              _buildListTile(title: AppStrings.mnemonicPhrase, subtitle: wallet.mnemonic.split(' ').join(', ')),
+              _buildListTile(title: AppStrings.mnemonicPhrase, subtitle: wallet.mnemonic),
             ],
           ).toSliver,
           AppSizedBox.height(48).toSliver,

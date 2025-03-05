@@ -1,18 +1,37 @@
-import 'package:encrypt/encrypt.dart' as encrypt;
+import 'dart:convert';
+
+import 'package:encrypt/encrypt.dart';
+import 'package:paribu_mobile/core/extension/string_extension.dart';
+import 'package:paribu_mobile/core/init/injection_container.dart';
+import 'package:paribu_mobile/core/utils/device_manager.dart';
 
 class AESHelper {
-  static final _key = encrypt.Key.fromLength(32);
-  static final _iv = encrypt.IV.fromLength(16);
+  Future<void> initialize() async {
+    final String? id = sl<DeviceInfo>().deviceId;
+    String deviceIdBase64 = base64Encode(utf8.encode(id.getValueOrDefault));
 
-  static String encryptData(String data) {
-    final encrypter = encrypt.Encrypter(encrypt.AES(_key));
-    final encrypted = encrypter.encrypt(data, iv: _iv);
-    return encrypted.base64;
+    String truncatedKey = deviceIdBase64.substring(0, 32);
+    key = Key.fromBase64(truncatedKey);
   }
 
-  static String decryptData(String data) {
-    final encrypter = encrypt.Encrypter(encrypt.AES(_key));
-    final decrypted = encrypter.decrypt(encrypt.Encrypted.fromBase64(data), iv: _iv);
+  late final Key key;
+
+  String encryptData(String data) {
+    final encrypter = Encrypter(AES(key));
+    final iv = IV.fromLength(16);
+    final encrypted = encrypter.encrypt(data, iv: iv);
+
+    return base64Encode(iv.bytes + encrypted.bytes);
+  }
+
+  String decryptData(String data) {
+    final encrypter = Encrypter(AES(key));
+    final encryptedBytes = base64Decode(data);
+
+    final iv = IV(encryptedBytes.sublist(0, 16));
+    final encryptedData = Encrypted(encryptedBytes.sublist(16));
+
+    final decrypted = encrypter.decrypt(encryptedData, iv: iv);
     return decrypted;
   }
 }

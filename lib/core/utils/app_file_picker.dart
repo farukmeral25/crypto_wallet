@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:paribu_mobile/core/extension/generic_extension.dart';
+import 'package:paribu_mobile/core/init/injection_container.dart';
 import 'package:paribu_mobile/core/utils/aes_helper.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -31,7 +32,7 @@ class AppFilePicker {
   }
 
   static String _encryptPassword(String password) {
-    return AESHelper.encryptData(password);
+    return sl<AESHelper>().encryptData(password);
   }
 
   static Future<Map<String, dynamic>?> _readFromFile() async {
