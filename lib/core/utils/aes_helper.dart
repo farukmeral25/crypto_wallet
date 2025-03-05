@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:paribu_mobile/core/extension/string_extension.dart';
 import 'package:paribu_mobile/core/init/injection_container.dart';
@@ -10,8 +11,9 @@ class AESHelper {
     final String? id = sl<DeviceInfo>().deviceId;
     String deviceIdBase64 = base64Encode(utf8.encode(id.getValueOrDefault));
 
-    String truncatedKey = deviceIdBase64.substring(0, 32);
-    key = Key.fromBase64(truncatedKey);
+    final bytes = utf8.encode(deviceIdBase64);
+    final hashed = sha256.convert(bytes);
+    key = Key.fromBase64(base64Encode(hashed.bytes));
   }
 
   late final Key key;
