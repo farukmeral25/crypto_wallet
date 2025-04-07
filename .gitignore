@@ -45,8 +45,8 @@ app.*.map.json
 /android/app/release
 
 # It was added to the comment line because it was a case study.
-#.env.dev
-#.env.prod
+.env.dev
+.env.prod
 
 # Generated files
 **/*.g.dart
