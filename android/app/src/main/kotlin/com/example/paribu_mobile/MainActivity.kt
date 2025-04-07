@@ -1,4 +1,4 @@
-package com.example.paribu_mobile
+package com.example.crypto_wallet_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
