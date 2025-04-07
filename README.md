@@ -1,3 +1,3 @@
-# paribu_mobile
+# crypto_wallet
 
 A new Flutter project.
