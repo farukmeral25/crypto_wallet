@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:paribu_mobile/feature/bottom_nav_bar/data/enum/bottom_nav_bar_type.dart';
+import 'package:crypto_wallet_mobile/feature/bottom_nav_bar/data/enum/bottom_nav_bar_type.dart';
 
 part 'bottom_nav_bar_state.freezed.dart';
 

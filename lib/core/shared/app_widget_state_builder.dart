@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/core/extension/string_extension.dart';
-import 'package:paribu_mobile/core/extension/widget_extension.dart';
-import 'package:paribu_mobile/core/utils/ui_state.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/core/extension/string_extension.dart';
+import 'package:crypto_wallet_mobile/core/extension/widget_extension.dart';
+import 'package:crypto_wallet_mobile/core/utils/ui_state.dart';
 
 enum WidgetType { sliver, none }
 
@@ -78,8 +78,7 @@ class AppWidgetStateBuilder<T> extends StatelessWidget {
             return builder;
           case UIStateStatus.error:
             return Center(
-              child:
-                  errorWidget ??
+              child: errorWidget ??
                   Text((failure?.message).getValueOrDefault, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyMedium),
             );
         }
@@ -94,8 +93,7 @@ class AppWidgetStateBuilder<T> extends StatelessWidget {
             return builder;
           case UIStateStatus.error:
             return Center(
-              child:
-                  errorWidget ??
+              child: errorWidget ??
                   Text((failure?.message).getValueOrDefault, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyMedium),
             ).toSliver;
         }

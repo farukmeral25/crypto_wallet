@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/asset_path.dart';
-import 'package:paribu_mobile/core/shared/app_icon.dart';
+import 'package:crypto_wallet_mobile/core/constant/asset_path.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_icon.dart';
 
 class SamplePage extends StatelessWidget {
   const SamplePage({super.key});

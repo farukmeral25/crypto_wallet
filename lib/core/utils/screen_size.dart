@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/app_constants.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_constants.dart';
 
 class ScreenSize {
   static final ScreenSize _instance = ScreenSize._init();

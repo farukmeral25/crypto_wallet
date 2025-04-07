@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:paribu_mobile/core/constant/app_environment.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_environment.dart';
 
 class DioManager {
   static Dio getDio() {

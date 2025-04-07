@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/core/error/general_failures.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/core/error/general_failures.dart';
 
 abstract class ApiHelper {
   /// Request data from API

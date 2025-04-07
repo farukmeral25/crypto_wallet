@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/app_page_routes.dart';
-import 'package:paribu_mobile/core/constant/app_strings.dart';
-import 'package:paribu_mobile/core/constant/asset_path.dart';
-import 'package:paribu_mobile/core/extension/widget_extension.dart';
-import 'package:paribu_mobile/core/functions/app_functions.dart';
-import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
-import 'package:paribu_mobile/core/shared/app_button.dart';
-import 'package:paribu_mobile/core/shared/app_icon.dart';
-import 'package:paribu_mobile/core/shared/app_scaffold.dart';
-import 'package:paribu_mobile/core/shared/app_sized_box.dart';
-import 'package:paribu_mobile/core/utils/route_manager.dart';
-import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_page_routes.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_strings.dart';
+import 'package:crypto_wallet_mobile/core/constant/asset_path.dart';
+import 'package:crypto_wallet_mobile/core/extension/widget_extension.dart';
+import 'package:crypto_wallet_mobile/core/functions/app_functions.dart';
+import 'package:crypto_wallet_mobile/core/helper/edge_insets_functions.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_button.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_icon.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_scaffold.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_sized_box.dart';
+import 'package:crypto_wallet_mobile/core/utils/route_manager.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/data/dto/wallet_dto.dart';
 
 class WalletManagePage extends StatelessWidget {
   const WalletManagePage({super.key});
@@ -55,8 +55,8 @@ class WalletManagePage extends StatelessWidget {
   }
 
   Widget _buildListTile({required String title, required String subtitle}) => ListTile(
-    title: Text(title),
-    subtitle: Text(subtitle),
-    trailing: GestureDetector(onTap: () => AppFunctions.copy(subtitle), child: AppIcon(assetPath: AssetPaths().copy)),
-  );
+        title: Text(title),
+        subtitle: Text(subtitle),
+        trailing: GestureDetector(onTap: () => AppFunctions.copy(subtitle), child: AppIcon(assetPath: AssetPaths().copy)),
+      );
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/feature/bottom_nav_bar/view/page/bottom_nav_bar_page.dart';
-import 'package:paribu_mobile/feature/wallet/view/page/create_wallet_page.dart';
-import 'package:paribu_mobile/feature/wallet/view/page/enter_pin_code_page.dart';
-import 'package:paribu_mobile/feature/wallet/view/page/wallet_manage_page.dart';
+import 'package:crypto_wallet_mobile/feature/bottom_nav_bar/view/page/bottom_nav_bar_page.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/view/page/create_wallet_page.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/view/page/enter_pin_code_page.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/view/page/wallet_manage_page.dart';
 
 enum AppPageRoutes {
   bottomNavBar(page: BottomNavBarPage()),

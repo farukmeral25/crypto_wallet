@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
 
 class AppIcon extends StatelessWidget {
   const AppIcon({super.key, required this.assetPath, this.height, this.width, this.color, this.fit = BoxFit.contain});

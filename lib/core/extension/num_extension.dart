@@ -1,4 +1,4 @@
-import 'package:paribu_mobile/core/utils/screen_size.dart';
+import 'package:crypto_wallet_mobile/core/utils/screen_size.dart';
 
 extension NumExtension on num? {
   double get h => ScreenSize().getHeight(getValueOrDefault);

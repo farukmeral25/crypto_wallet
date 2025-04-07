@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:paribu_mobile/core/init/injection_container.dart';
-import 'package:paribu_mobile/core/utils/aes_helper.dart';
+import 'package:crypto_wallet_mobile/core/init/injection_container.dart';
+import 'package:crypto_wallet_mobile/core/utils/aes_helper.dart';
 
 part 'wallet_dto.g.dart';
 

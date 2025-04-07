@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart';
-import 'package:paribu_mobile/core/extension/string_extension.dart';
-import 'package:paribu_mobile/core/init/injection_container.dart';
-import 'package:paribu_mobile/core/utils/device_manager.dart';
+import 'package:crypto_wallet_mobile/core/extension/string_extension.dart';
+import 'package:crypto_wallet_mobile/core/init/injection_container.dart';
+import 'package:crypto_wallet_mobile/core/utils/device_manager.dart';
 
 class AESHelper {
   Future<void> initialize() async {

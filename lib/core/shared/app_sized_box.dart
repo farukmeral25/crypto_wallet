@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/extension/num_extension.dart';
-import 'package:paribu_mobile/core/utils/screen_size.dart';
+import 'package:crypto_wallet_mobile/core/extension/num_extension.dart';
+import 'package:crypto_wallet_mobile/core/utils/screen_size.dart';
 
 class AppSizedBox extends StatelessWidget {
   AppSizedBox._(this.size, {this.child, required AppSizedBoxType appSizedBoxType}) {

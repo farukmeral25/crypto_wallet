@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/extension/num_extension.dart';
-import 'package:paribu_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/extension/num_extension.dart';
+import 'package:crypto_wallet_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
 
 part 'coin_dto.g.dart';
 

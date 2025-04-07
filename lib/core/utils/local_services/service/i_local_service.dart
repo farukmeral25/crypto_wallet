@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/core/utils/local_services/utils/param/local_key_param.dart';
-import 'package:paribu_mobile/core/utils/local_services/utils/param/local_key_with_value_param.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/core/utils/local_services/utils/param/local_key_param.dart';
+import 'package:crypto_wallet_mobile/core/utils/local_services/utils/param/local_key_with_value_param.dart';
 
 abstract class ILocalService {
   /// [LocalKeyParam] is a class that contains the key value to be used in the local service.

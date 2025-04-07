@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/asset_path.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/constant/theme/app_text_styles.dart';
-import 'package:paribu_mobile/core/extension/num_extension.dart';
-import 'package:paribu_mobile/core/helper/edge_insets_functions.dart';
-import 'package:paribu_mobile/core/keys/app_keys.dart';
-import 'package:paribu_mobile/core/shared/app_icon.dart';
+import 'package:crypto_wallet_mobile/core/constant/asset_path.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_text_styles.dart';
+import 'package:crypto_wallet_mobile/core/extension/num_extension.dart';
+import 'package:crypto_wallet_mobile/core/helper/edge_insets_functions.dart';
+import 'package:crypto_wallet_mobile/core/keys/app_keys.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_icon.dart';
 
 class AppSnackBar {
   static void show(String title, {String? description}) {

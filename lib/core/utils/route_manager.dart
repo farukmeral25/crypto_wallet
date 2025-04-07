@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/app_page_routes.dart';
-import 'package:paribu_mobile/core/keys/app_keys.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_page_routes.dart';
+import 'package:crypto_wallet_mobile/core/keys/app_keys.dart';
 
 class RouteManager {
   static final RouteManager _instance = RouteManager._internal();

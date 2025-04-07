@@ -1,10 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/constant/theme/app_text_styles.dart';
-import 'package:paribu_mobile/core/extension/generic_extension.dart';
-import 'package:paribu_mobile/core/shared/app_sized_box.dart';
-import 'package:paribu_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_text_styles.dart';
+import 'package:crypto_wallet_mobile/core/extension/generic_extension.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_sized_box.dart';
+import 'package:crypto_wallet_mobile/feature/markets/data/dto/market_cap_price_dto.dart';
 
 class CoinChart extends StatelessWidget {
   const CoinChart({super.key, required this.marketCapPrices, this.isUp = true});
@@ -54,11 +54,9 @@ class CoinChart extends StatelessWidget {
             ),
             lineBarsData: [
               LineChartBarData(
-                spots:
-                    marketCapPrices.map((e) {
-                      return FlSpot(marketCapPrices.indexOf(e).toDouble(), e.marketCap);
-                    }).toList(),
-
+                spots: marketCapPrices.map((e) {
+                  return FlSpot(marketCapPrices.indexOf(e).toDouble(), e.marketCap);
+                }).toList(),
                 gradient: linearGradient,
                 belowBarData: BarAreaData(
                   show: true,

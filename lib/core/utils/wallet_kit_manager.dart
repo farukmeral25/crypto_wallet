@@ -1,4 +1,4 @@
-import 'package:paribu_mobile/core/constant/app_environment.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_environment.dart';
 import 'package:reown_walletkit/reown_walletkit.dart';
 
 class WalletKitManager {
@@ -7,7 +7,7 @@ class WalletKitManager {
   void createWalletKit() {
     walletKit = ReownWalletKit(
       core: ReownCore(projectId: AppEnvironment().walletKit),
-      metadata: PairingMetadata(name: "paribu_mobile", description: "description", url: "https://example.com/"),
+      metadata: PairingMetadata(name: "crypto_wallet_mobile", description: "description", url: "https://example.com/"),
     );
   }
 

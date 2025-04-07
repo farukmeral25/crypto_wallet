@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/constant/theme/app_text_styles.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_text_styles.dart';
 
 enum ButtonType { filled, text }
 

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/core/error/general_failures.dart';
-import 'package:paribu_mobile/core/utils/local_services/service/i_local_service.dart';
-import 'package:paribu_mobile/core/utils/local_services/utils/param/local_key_param.dart';
-import 'package:paribu_mobile/core/utils/local_services/utils/param/local_key_with_value_param.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/core/error/general_failures.dart';
+import 'package:crypto_wallet_mobile/core/utils/local_services/service/i_local_service.dart';
+import 'package:crypto_wallet_mobile/core/utils/local_services/utils/param/local_key_param.dart';
+import 'package:crypto_wallet_mobile/core/utils/local_services/utils/param/local_key_with_value_param.dart';
 
 class LocalService implements ILocalService {
   final FlutterSecureStorage secureStorage;

@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
-import 'package:paribu_mobile/core/extension/generic_extension.dart';
-import 'package:paribu_mobile/core/init/injection_container.dart';
-import 'package:paribu_mobile/core/utils/aes_helper.dart';
+import 'package:crypto_wallet_mobile/core/extension/generic_extension.dart';
+import 'package:crypto_wallet_mobile/core/init/injection_container.dart';
+import 'package:crypto_wallet_mobile/core/utils/aes_helper.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppFilePicker {

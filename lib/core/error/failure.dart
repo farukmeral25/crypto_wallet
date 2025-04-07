@@ -1,4 +1,4 @@
-import 'package:paribu_mobile/core/shared/app_snackbar/snackbar.dart';
+import 'package:crypto_wallet_mobile/core/shared/app_snackbar/snackbar.dart';
 
 abstract class Failure {
   final String? error;

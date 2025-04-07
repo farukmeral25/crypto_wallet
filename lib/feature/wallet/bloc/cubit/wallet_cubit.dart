@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:paribu_mobile/core/constant/app_page_routes.dart';
-import 'package:paribu_mobile/core/extension/generic_extension.dart';
-import 'package:paribu_mobile/core/init/injection_container.dart';
-import 'package:paribu_mobile/core/utils/route_manager.dart';
-import 'package:paribu_mobile/core/utils/ui_state.dart';
-import 'package:paribu_mobile/feature/wallet/bloc/state/wallet_state.dart';
-import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
-import 'package:paribu_mobile/feature/wallet/data/repo/i_wallet_repo.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_page_routes.dart';
+import 'package:crypto_wallet_mobile/core/extension/generic_extension.dart';
+import 'package:crypto_wallet_mobile/core/init/injection_container.dart';
+import 'package:crypto_wallet_mobile/core/utils/route_manager.dart';
+import 'package:crypto_wallet_mobile/core/utils/ui_state.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/bloc/state/wallet_state.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/data/dto/wallet_dto.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/data/repo/i_wallet_repo.dart';
 
 class WalletCubit extends Cubit<WalletState> {
   WalletCubit() : super(WalletState());

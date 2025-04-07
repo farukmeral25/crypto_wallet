@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/core/utils/ui_state.dart';
-import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/core/utils/ui_state.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/data/dto/wallet_dto.dart';
 
 part 'wallet_state.freezed.dart';
 

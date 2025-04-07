@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/extension/num_extension.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/extension/num_extension.dart';
 
 class AppInputDecorationTheme {
   static InputDecorationTheme inputTheme = InputDecorationTheme(

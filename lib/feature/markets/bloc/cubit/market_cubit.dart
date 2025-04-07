@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:paribu_mobile/core/extension/generic_extension.dart';
-import 'package:paribu_mobile/core/init/injection_container.dart';
-import 'package:paribu_mobile/core/utils/ui_state.dart';
-import 'package:paribu_mobile/feature/markets/bloc/state/market_state.dart';
-import 'package:paribu_mobile/feature/markets/data/repo/i_market_repo.dart';
+import 'package:crypto_wallet_mobile/core/extension/generic_extension.dart';
+import 'package:crypto_wallet_mobile/core/init/injection_container.dart';
+import 'package:crypto_wallet_mobile/core/utils/ui_state.dart';
+import 'package:crypto_wallet_mobile/feature/markets/bloc/state/market_state.dart';
+import 'package:crypto_wallet_mobile/feature/markets/data/repo/i_market_repo.dart';
 
 class MarketCubit extends Cubit<MarketState> {
   MarketCubit() : super(MarketState());
@@ -33,13 +33,12 @@ class MarketCubit extends Cubit<MarketState> {
         failure.showSnackBar();
       },
       (data) {
-        final updatedCoins =
-            state.coins.map((coin) {
-              if (coin.id.isEquals(id)) {
-                return coin.copyWith(marketCapPrices: data.marketCaps);
-              }
-              return coin;
-            }).toList();
+        final updatedCoins = state.coins.map((coin) {
+          if (coin.id.isEquals(id)) {
+            return coin.copyWith(marketCapPrices: data.marketCaps);
+          }
+          return coin;
+        }).toList();
 
         emit(state.copyWith(coins: updatedCoins));
       },

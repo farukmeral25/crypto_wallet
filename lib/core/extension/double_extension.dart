@@ -1,4 +1,4 @@
-import 'package:paribu_mobile/core/extension/list_extension.dart';
+import 'package:crypto_wallet_mobile/core/extension/list_extension.dart';
 
 extension DoubleExtension on double? {
   String get toCurrency {

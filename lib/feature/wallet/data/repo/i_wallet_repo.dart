@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:paribu_mobile/core/error/failure.dart';
-import 'package:paribu_mobile/feature/wallet/data/dto/wallet_dto.dart';
+import 'package:crypto_wallet_mobile/core/error/failure.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/data/dto/wallet_dto.dart';
 
 abstract class IWalletRepo {
   Future<Either<Failure, WalletDto>> createWallet(String name);

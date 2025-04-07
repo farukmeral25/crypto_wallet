@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:paribu_mobile/core/constant/app_strings.dart';
-import 'package:paribu_mobile/core/constant/asset_path.dart';
-import 'package:paribu_mobile/feature/markets/view/markets_body.dart';
-import 'package:paribu_mobile/feature/wallet/view/wallet_body.dart';
+import 'package:crypto_wallet_mobile/core/constant/app_strings.dart';
+import 'package:crypto_wallet_mobile/core/constant/asset_path.dart';
+import 'package:crypto_wallet_mobile/feature/markets/view/markets_body.dart';
+import 'package:crypto_wallet_mobile/feature/wallet/view/wallet_body.dart';
 
 enum BottomNavBarType { markets, wallet }
 

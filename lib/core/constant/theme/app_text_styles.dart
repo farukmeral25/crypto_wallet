@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:paribu_mobile/core/constant/theme/app_colors.dart';
-import 'package:paribu_mobile/core/extension/num_extension.dart';
+import 'package:crypto_wallet_mobile/core/constant/theme/app_colors.dart';
+import 'package:crypto_wallet_mobile/core/extension/num_extension.dart';
 
 class AppTextStyles {
   static TextStyle px10w400 = TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400, color: AppColors.foregroundPrimary, height: 12 / 10);
